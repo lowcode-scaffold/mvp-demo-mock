@@ -22,7 +22,7 @@ router
         mobile: Random.natural(),
         address: Random.cword(20, 30),
         tags: list2,
-        id: Random.natural(100, 1000),
+        id: Random.id(),
       });
     }
     // delay(2);
