@@ -12,6 +12,12 @@ router
   .get('/', (ctx) => {
     ctx.body = 'lowcode-mock';
   })
+  .get('dist/app.js', (ctx) => {
+    ctx.body = 'lowcode-mock';
+  })
+  .get('/dist/app.js', (ctx) => {
+    ctx.body = 'lowcode-mock';
+  })
   .get('/delay', (ctx) => {
     delay(3);
     ctx.body = 'delay';
@@ -45,5 +51,8 @@ router
   .all(
     new RegExp('^/lowcode/mock/(|^$)'),
     proxy('https://github.com/wjkang/lowcode-mock'),
-  );
+  )
+  .all('/(.*)', (ctx) => {
+    ctx.body = 'lowcode-mock';
+  });
 module.exports = router;
