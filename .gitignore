@@ -8,3 +8,5 @@ selenium-debug.log
 .idea/
 codeGenerate/dist/
 *.lock
+
+.vercel
