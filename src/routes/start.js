@@ -10,7 +10,7 @@ const { Random } = Mock;
 const router = new KoaRouter();
 router
   .get('/', (ctx) => {
-    ctx.body = 'lowcode-mock';
+    ctx.body = 'lowcode-mock1212';
   })
   .get('dist/app.js', (ctx) => {
     ctx.body = 'lowcode-mock';
