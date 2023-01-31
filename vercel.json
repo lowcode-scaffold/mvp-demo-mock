@@ -1,5 +1,5 @@
 {
-	"framework": "null",
+	"framework": null,
 	"installCommand": "yarn",
 	"buildCommand": "yarn build",
 	"builds": [
