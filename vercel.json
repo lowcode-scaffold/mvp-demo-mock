@@ -1,4 +1,7 @@
 {
+	"framework": "null",
+	"installCommand": "yarn",
+	"buildCommand": "yarn build",
 	"builds": [
 		{
 			"src": "dist/index.js",
