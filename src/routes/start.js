@@ -13,7 +13,7 @@ router
     ctx.body = 'lowcode-mock1212';
   })
   .get('dist/app.js', (ctx) => {
-    ctx.body = 'lowcode-mock';
+    ctx.body = '123';
   })
   .get('/dist/app.js', (ctx) => {
     ctx.body = 'lowcode-mock';
