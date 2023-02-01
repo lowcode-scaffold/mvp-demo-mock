@@ -3,13 +3,12 @@ import KoaRouter from 'koa-router';
 import KoaBody from 'koa-body';
 import cors from 'koa2-cors';
 // import Routes from './routes/index';
+import https from 'https';
+import fs from 'fs';
 import startRouter from './routes/start';
 import mvpDemoRouter from './routes/mvp-demo';
 import proxy from './middleware/Proxy';
 import config from './config';
-
-const https = require('https');
-const fs = require('fs');
 
 const app = new Koa2();
 

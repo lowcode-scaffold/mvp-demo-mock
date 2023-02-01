@@ -1,5 +1,5 @@
-const request = require('superagent');
-const url = require('url');
+import request from 'superagent';
+import url from 'url';
 
 module.exports = (host, referer = 'https://github.com/wjkang/lowcode-mock') => {
   const hostObj = url.parse(host);

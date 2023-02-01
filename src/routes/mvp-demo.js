@@ -1,11 +1,8 @@
 import KoaRouter from 'koa-router';
+import { Random } from 'mockjs';
 import proxy from '../middleware/Proxy';
 import request from '../lib/proxy';
 import { delay } from '../lib/util';
-
-const Mock = require('mockjs');
-
-const { Random } = Mock;
 
 const router = new KoaRouter();
 router

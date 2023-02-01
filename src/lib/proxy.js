@@ -1,5 +1,5 @@
-const request = require('superagent');
-const url = require('url');
+import request from 'superagent';
+import url from 'url';
 
 export default async function (
   ctx,
