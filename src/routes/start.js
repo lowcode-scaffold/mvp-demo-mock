@@ -48,8 +48,6 @@ router
   .all(
     new RegExp('^/lowcode/mock/(|^$)'),
     proxy('https://github.com/wjkang/lowcode-mock'),
-  )
-  .all('(.*)', (ctx) => {
-    ctx.body = 'lowcode-mock';
-  });
+  );
+
 module.exports = router;
