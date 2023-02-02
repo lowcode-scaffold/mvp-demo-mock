@@ -1,4 +1,7 @@
-// eslint-disable-next-line import/no-unresolved
-const requireDirectory = require('require-directory');
+import start from './start';
+import mvpDemo from './mvp-demo';
 
-module.exports = requireDirectory(module);
+export default {
+  start,
+  mvpDemo,
+};

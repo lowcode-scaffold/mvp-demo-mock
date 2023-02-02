@@ -2,11 +2,9 @@ import Koa2 from 'koa';
 import KoaRouter from 'koa-router';
 import KoaBody from 'koa-body';
 import cors from 'koa2-cors';
-// import Routes from './routes/index';
 import https from 'https';
 import fs from 'fs';
-import startRouter from './routes/start';
-import mvpDemoRouter from './routes/mvp-demo';
+import Routes from './routes/index';
 import proxy from './middleware/Proxy';
 import config from './config';
 
@@ -37,11 +35,9 @@ app.use(
     textLimit: '10mb',
   }),
 );
-// Object.keys(Routes).forEach((key) => {
-//   app.use(Routes[key].routes()).use(Routes[key].allowedMethods());
-// });
-app.use(startRouter.routes()).use(startRouter.allowedMethods());
-app.use(mvpDemoRouter.routes()).use(mvpDemoRouter.allowedMethods());
+Object.keys(Routes).forEach((key) => {
+  app.use(Routes[key].routes()).use(Routes[key].allowedMethods());
+});
 
 const router = new KoaRouter();
 router.all(
