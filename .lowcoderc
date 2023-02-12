@@ -3,8 +3,8 @@
 		"domain": "http://yapi.smart-xwork.cn",
 		"projects": [
 			{
-				"name": "mvp-demo",
-				"token": "d236a39061c30e3068f74e48634d6569348e97a9215b35c87fe9be2d78f003a3",
+				"name": "rbac",
+				"token": "b6822a78e4e3376529b5fc4d82a6c876ba7eebf31b46cda12e787a449506a76b",
 				"domain": "http://yapi.smart-xwork.cn"
 			}
 		]
