@@ -26,5 +26,29 @@ router
   })
   .delete(`/application/del/:id`, async (ctx, next) => {
     ctx.body = { code: 200, msg: Random.cword(5, 6), result: Random.boolean() };
+  })
+  .get(`/application/info/:id`, async (ctx, next) => {
+    ctx.body = {
+      code: 200,
+      msg: Random.cword(5, 6),
+      result: {
+        id: Random.natural(100, 1000),
+        name: Random.cword(5, 6),
+        code: Random.word(5, 6),
+        createdDate: Random.cword(5, 6),
+        updatedDate: Random.cword(5, 6),
+      },
+    };
+  })
+  .post(`/application/add`, async (ctx, next) => {
+    ctx.body = {
+      code: 200,
+      msg: Random.cword(5, 6),
+      result: Random.natural(100, 1000),
+    };
+  })
+  .post(`/application/edit`, async (ctx, next) => {
+    delay(2);
+    ctx.body = { code: 200, msg: Random.cword(5, 6), result: Random.boolean() };
   });
 module.exports = router;
