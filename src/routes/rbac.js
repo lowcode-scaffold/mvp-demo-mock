@@ -50,5 +50,34 @@ router
   .post(`/application/edit`, async (ctx, next) => {
     delay(2);
     ctx.body = { code: 200, msg: Random.cword(5, 6), result: Random.boolean() };
+  })
+  .get(`/interface/page`, async (ctx, next) => {
+    const list2 = [];
+    for (let i = 0; i < 10; i++) {
+      list2.push({
+        id: Random.natural(100, 1000),
+        menuId: Random.natural(100, 1000),
+        interfaceId: Random.natural(100, 1000),
+        menuName: Random.cword(5, 6),
+        menuCode: Random.word(5, 6),
+      });
+    }
+
+    const list1 = [];
+    for (let i = 0; i < 10; i++) {
+      list1.push({
+        apiPath: Random.cword(5, 6),
+        serviceName: Random.cword(5, 6),
+        createdDate: Random.cword(5, 6),
+        updatedDate: Random.cword(5, 6),
+        id: Random.natural(100, 1000),
+        menuServices: list2,
+      });
+    }
+    ctx.body = {
+      code: 200,
+      msg: Random.cword(5, 6),
+      result: { records: list1, pages: Random.natural(100, 1000) },
+    };
   });
 module.exports = router;
