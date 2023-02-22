@@ -79,5 +79,48 @@ router
       msg: Random.cword(5, 6),
       result: { records: list1, pages: Random.natural(100, 1000) },
     };
+  })
+  .post(`/interface/add`, async (ctx, next) => {
+    ctx.body = {
+      code: 200,
+      msg: Random.cword(5, 6),
+      result: Random.natural(100, 1000),
+    };
+  })
+  .post(`/interface/edit`, async (ctx, next) => {
+    ctx.body = { code: 200, msg: Random.cword(5, 6), result: Random.boolean() };
+  })
+  .delete(`/interface/del/:id`, async (ctx, next) => {
+    ctx.body = { code: 200, msg: Random.cword(5, 6), result: Random.boolean() };
+  })
+  .get(`/interface/info/:id`, async (ctx, next) => {
+    ctx.body = {
+      code: 200,
+      msg: Random.cword(5, 6),
+      result: {
+        apiPath: Random.cword(5, 6),
+        serviceName: Random.cword(5, 6),
+        description: Random.cword(5, 6),
+      },
+    };
+  })
+
+  .get(`/role/page`, async (ctx, next) => {
+    const list1 = [];
+    for (let i = 0; i < 10; i++) {
+      list1.push({
+        code: Random.cword(5, 6),
+        name: Random.cword(5, 6),
+        createdDate: Random.cword(5, 6),
+        updatedDate: Random.cword(5, 6),
+        id: Random.natural(100, 1000),
+        systemName: Random.cword(5, 6),
+      });
+    }
+    ctx.body = {
+      code: 200,
+      msg: Random.cword(5, 6),
+      result: { records: list1, pages: Random.natural(100, 1000) },
+    };
   });
 module.exports = router;
